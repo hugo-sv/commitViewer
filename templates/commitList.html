@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <title>Commit viewer</title>
+</head>
+
+<body>
+    <div class="container">
+        {% for content in contents %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start" onclick={{ '"'+ 'window.location+=' +
+            "'" + content.get( "sha") + "'" + '"' }} style="padding-top:10px">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{content.get("message")}}</h5>
+                <small>{{content.get("date")}}</small>
+            </div>
+            </br>
+            <div class="card">
+                <div class="row ">
+                    <div class="col-md-1">
+                        <img src="{{content.get('avatar_url')}}" class="align-middle img-thumbnail" style="max-width: 100%">
+                    </div>
+                    <div class="col-md-8 px-3">
+                        <h5 class="align-left card-title">{{content.get('login')}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>{{content.get('sha')[:7]}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- {{ display(content) }} -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
