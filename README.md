@@ -1,7 +1,5 @@
 # Commit Viewer 
 
-## General informations
-
 This project is a native python 3.6 web application displaying a list of commits from a repository and details on any specific commits.
 
 The repository URL is ```https://github.com/torvalds/linux```
@@ -51,10 +49,10 @@ Willing to implement a great design, I tried to use Semantic UI for front-end, b
 Another difficulty I met was to handle the cases where an author or a comitter, or both wasn't defined.
  
 
-## Improvments
+## Improvements
 
 If I could spend more time on this project, I would work on the user interface in order to implement :
  - A navigation bar on the list of commits views in order to filter or search commits.
  - Dropables menus in the commit details, in order to improve the navigation process within all the data.
 
- I would also have tried to implement the front end with react, in order to produce a more dynamic front end.
+ I would also have tried to implement the front end with react, in order to produce a more dynamic front end. And make some implementation easier.
